@@ -1,0 +1,5 @@
+-- 3. Create a query that will display Student Code, Student Name, Book Code, and Book Name for all students whose expected book return date is today. 
+
+ SELECT S.STUDENT_CODE,S.STUDENT_NAME,B.BOOK_CODE,BB.BOOK_NAME
+FROM STUDENTMASTER S,BOOK_TRANSACTIONS B,BOOK_MASTER BB
+WHERE S.STUDENT_CODE=B.STUDENT_CODE AND TO_CHAR(B.BOOK_EXPECTED_RETURN_DATE,'DD MM YYYY') LIKE TO_CHAR(SYSDATE,'DD MM YYYY');
